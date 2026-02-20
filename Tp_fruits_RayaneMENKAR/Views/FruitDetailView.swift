@@ -47,22 +47,7 @@ struct FruitDetailView: View {
                     
                     Divider()
                     
-                    // Description Title
-                    Text("Learn more about \(fruit.title)")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
-                    
-                    // Description Text
-                    Text(fruit.description)
-                        .font(.body)
-                        .foregroundColor(.secondary)
-                        .lineSpacing(8)
-                        .multilineTextAlignment(.leading)
-                    
-                    Divider()
-                    
-                    // Nutrition Section
+                    // Nutrition Section (déplacée ici, juste après le titre)
                     VStack(alignment: .leading, spacing: 10) {
                         Button(action: {
                             withAnimation {
@@ -70,7 +55,7 @@ struct FruitDetailView: View {
                             }
                         }) {
                             HStack {
-                                Text("Nutritional value per 100g")
+                                Text("Valeur nutritionnelle pour 100g")
                                     .font(.headline)
                                     .fontWeight(.bold)
                                     .foregroundColor(.primary)
@@ -110,6 +95,21 @@ struct FruitDetailView: View {
                     .padding()
                     .background(Color(.systemGray6))
                     .cornerRadius(12)
+                    
+                    Divider()
+                    
+                    // Description Title
+                    Text("En savoir plus sur \(fruit.title)")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(.primary)
+                    
+                    // Description Text
+                    Text(fruit.description)
+                        .font(.body)
+                        .foregroundColor(.secondary)
+                        .lineSpacing(8)
+                        .multilineTextAlignment(.leading)
                 }
                 .padding(.horizontal)
                 .padding(.bottom, 30)
@@ -122,13 +122,13 @@ struct FruitDetailView: View {
     /// Retourne le label pour chaque valeur nutritionnelle
     private func getNutritionLabel(for index: Int) -> String {
         switch index {
-        case 0: return "Energy"
-        case 1: return "Sugar"
-        case 2: return "Fat"
-        case 3: return "Protein"
-        case 4: return "Vitamins"
-        case 5: return "Minerals"
-        default: return "Other"
+        case 0: return "Énergie"
+        case 1: return "Sucre"
+        case 2: return "Graisse"
+        case 3: return "Protéine"
+        case 4: return "Vitamines"
+        case 5: return "Minéraux"
+        default: return "Autre"
         }
     }
 }
