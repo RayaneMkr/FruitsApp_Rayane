@@ -1,14 +1,5 @@
-//
-//  SettingView.swift
-//  Tp_fruits_RayaneMENKAR
-//
-//  Created by COURS1 on 20/02/2026.
-//
-
 import SwiftUI
 
-// MARK: - Setting View
-/// Vue des paramètres de l'application
 struct SettingView: View {
     @Environment(\.dismiss) var dismiss
     @AppStorage("isOnboarding") var isOnboarding: Bool = true
@@ -16,7 +7,6 @@ struct SettingView: View {
     var body: some View {
         NavigationView {
             Form {
-                // MARK: - Section FRUCTUS
                 Section(header: Text("FRUCTUS")) {
                     HStack {
                         Image(systemName: "info.circle")
@@ -41,7 +31,7 @@ struct SettingView: View {
                     HStack {
                         Image(systemName: "person.crop.circle")
                             .foregroundColor(.orange)
-                        Text("Developer")
+                        Text("Développeur")
                             .fontWeight(.semibold)
                         Spacer()
                         Text("Rayane MENKAR")
@@ -51,7 +41,7 @@ struct SettingView: View {
                     HStack {
                         Image(systemName: "apps.iphone")
                             .foregroundColor(.purple)
-                        Text("Platform")
+                        Text("Plateforme")
                             .fontWeight(.semibold)
                         Spacer()
                         Text("iOS")
@@ -69,25 +59,23 @@ struct SettingView: View {
                     }
                 }
                 
-                // MARK: - Section CUSTOMIZATION
-                Section(header: Text("CUSTOMIZATION")) {
+                Section(header: Text("PERSONNALISATION")) {
                     Toggle(isOn: $isOnboarding) {
                         HStack {
                             Image(systemName: "arrow.clockwise")
                                 .foregroundColor(.blue)
-                            Text("Restart Application")
+                            Text("Redémarrer l'application")
                                 .fontWeight(.semibold)
                         }
                     }
                     .tint(.blue)
                 }
                 
-                // MARK: - Section APPLICATION
                 Section(header: Text("APPLICATION")) {
                     HStack {
                         Image(systemName: "doc.text")
                             .foregroundColor(.gray)
-                        Text("Terms & Conditions")
+                        Text("Conditions d'utilisation")
                             .fontWeight(.semibold)
                         Spacer()
                         Image(systemName: "chevron.right")
@@ -98,7 +86,7 @@ struct SettingView: View {
                     HStack {
                         Image(systemName: "hand.raised")
                             .foregroundColor(.gray)
-                        Text("Privacy Policy")
+                        Text("Politique de confidentialité")
                             .fontWeight(.semibold)
                         Spacer()
                         Image(systemName: "chevron.right")
@@ -109,7 +97,7 @@ struct SettingView: View {
                     HStack {
                         Image(systemName: "flame")
                             .foregroundColor(.red)
-                        Text("Website")
+                        Text("Site Web")
                             .fontWeight(.semibold)
                         Spacer()
                         Text("fructus.app")
@@ -119,7 +107,7 @@ struct SettingView: View {
                     HStack {
                         Image(systemName: "link")
                             .foregroundColor(.blue)
-                        Text("SwiftUI Course")
+                        Text("Cours SwiftUI")
                             .fontWeight(.semibold)
                         Spacer()
                         Image(systemName: "chevron.right")
@@ -128,7 +116,7 @@ struct SettingView: View {
                     }
                 }
             }
-            .navigationTitle("Settings")
+            .navigationTitle("Paramètres")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

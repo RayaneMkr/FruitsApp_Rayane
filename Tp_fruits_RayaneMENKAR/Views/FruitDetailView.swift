@@ -1,14 +1,5 @@
-//
-//  FruitDetailView.swift
-//  Tp_fruits_RayaneMENKAR
-//
-//  Created by COURS1 on 20/02/2026.
-//
-
 import SwiftUI
 
-// MARK: - Fruit Detail View
-/// Vue détaillée d'un fruit avec description complète et informations nutritionnelles
 struct FruitDetailView: View {
     let fruit: Fruit
     @State private var isShowingNutrition = false
@@ -16,7 +7,6 @@ struct FruitDetailView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                // Header Image avec gradient
                 ZStack {
                     LinearGradient(
                         colors: fruit.gradientColors.map { Color($0) },
@@ -34,12 +24,10 @@ struct FruitDetailView: View {
                 .ignoresSafeArea(edges: .top)
                 
                 VStack(alignment: .leading, spacing: 20) {
-                    // Fruit Title
                     Text(fruit.title)
                         .font(.system(size: 40, weight: .heavy))
                         .foregroundColor(.primary)
                     
-                    // Headline
                     Text(fruit.headline)
                         .font(.headline)
                         .foregroundColor(.secondary)
@@ -47,7 +35,6 @@ struct FruitDetailView: View {
                     
                     Divider()
                     
-                    // Nutrition Section (déplacée ici, juste après le titre)
                     VStack(alignment: .leading, spacing: 10) {
                         Button(action: {
                             withAnimation {
@@ -98,13 +85,11 @@ struct FruitDetailView: View {
                     
                     Divider()
                     
-                    // Description Title
                     Text("En savoir plus sur \(fruit.title)")
                         .font(.title2)
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
                     
-                    // Description Text
                     Text(fruit.description)
                         .font(.body)
                         .foregroundColor(.secondary)
@@ -119,7 +104,6 @@ struct FruitDetailView: View {
         .ignoresSafeArea(edges: .top)
     }
     
-    /// Retourne le label pour chaque valeur nutritionnelle
     private func getNutritionLabel(for index: Int) -> String {
         switch index {
         case 0: return "Énergie"

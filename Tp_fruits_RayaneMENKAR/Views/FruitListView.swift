@@ -1,14 +1,5 @@
-//
-//  FruitListView.swift
-//  Tp_fruits_RayaneMENKAR
-//
-//  Created by COURS1 on 20/02/2026.
-//
-
 import SwiftUI
 
-// MARK: - Fruit List View
-/// Vue de la liste de tous les fruits
 struct FruitListView: View {
     @EnvironmentObject var viewModel: FruitViewModel
     @State private var isShowingSettings = false
@@ -42,14 +33,11 @@ struct FruitListView: View {
     }
 }
 
-// MARK: - Fruit Row View
-/// Vue d'une ligne de fruit dans la liste
 struct FruitRowView: View {
     let fruit: Fruit
     
     var body: some View {
         HStack(spacing: 15) {
-            // Fruit Image
             Image(fruit.image)
                 .resizable()
                 .scaledToFit()
@@ -68,7 +56,6 @@ struct FruitRowView: View {
                 )
                 .padding(8)
             
-            // Fruit Info
             VStack(alignment: .leading, spacing: 5) {
                 Text(fruit.title)
                     .font(.title3)
@@ -84,7 +71,6 @@ struct FruitRowView: View {
         .padding(.vertical, 5)
     }
     
-    /// Récupère les couleurs de gradient depuis les noms de couleurs
     private func getGradientColors() -> [Color] {
         return fruit.gradientColors.map { Color($0) }
     }
